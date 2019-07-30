@@ -76,6 +76,7 @@ func main() {
 	//log.Fatal(http.ListenAndServe(config.PublishAddr+":"+config.PublishPort, nil))
 
         serverErr := http.ListenAndServe(config.PublishAddr+":"+config.PublishPort, nil)
+	log.Info("Konomrd3")
 
 	if serverErr != nil {
 	    log.Println("Error starting server")
