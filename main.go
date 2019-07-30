@@ -73,8 +73,16 @@ func main() {
 
 	log.Info("Konomrd")
 
+	//log.Fatal(http.ListenAndServe(config.PublishAddr+":"+config.PublishPort, nil))
 
-	log.Fatal(http.ListenAndServe(config.PublishAddr+":"+config.PublishPort, nil))
+        serverErr := http.ListenAndServe(config.PublishAddr+":"+config.PublishPort, nil)
+
+	if serverErr != nil {
+	    log.Println("Error starting server")
+	    log.Println(serverErr)
+	} else {
+	    log.Println("Started server on - 127.0.0.1:8080" )
+	}
 }
 
 func getLogLevel() log.Level {
