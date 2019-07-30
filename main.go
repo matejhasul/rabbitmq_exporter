@@ -49,6 +49,10 @@ func main() {
 	}).Info("Starting RabbitMQ exporter")
 
 	log.WithFields(log.Fields{
+		"KRA":          "BLA",
+	}).Info("Konomrd2")
+
+	log.WithFields(log.Fields{
 		"PUBLISH_ADDR":        config.PublishAddr,
 		"PUBLISH_PORT":        config.PublishPort,
 		"RABBIT_URL":          config.RabbitURL,
@@ -66,6 +70,9 @@ func main() {
 		"MAX_QUEUES":          config.MaxQueues,
 		//		"RABBIT_PASSWORD": config.RABBIT_PASSWORD,
 	}).Info("Active Configuration")
+
+	log.Info("Konomrd")
+
 
 	log.Fatal(http.ListenAndServe(config.PublishAddr+":"+config.PublishPort, nil))
 }

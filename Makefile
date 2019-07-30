@@ -12,7 +12,7 @@
 # limitations under the License.
 
 GO    := go
-PROMU := $(GOPATH)/bin/promu
+PROMU := /usr/local/bin/promu
 pkgs   = $(shell $(GO) list ./... | grep -v /vendor/)
 
 PREFIX                  ?= $(shell pwd)
@@ -41,7 +41,7 @@ vet:
 
 build: promu
 	@echo ">> building binaries"
-	@$(PROMU) build --prefix $(PREFIX)
+	@$(PROMU) build -v --prefix $(PREFIX)
 
 tarball: promu
 	@echo ">> building release tarball"
